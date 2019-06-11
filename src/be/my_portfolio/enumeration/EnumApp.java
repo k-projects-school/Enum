@@ -3,6 +3,7 @@ package be.my_portfolio.enumeration;
 public class EnumApp {
 
 	public static void main(String[] args) {
+		System.out.println("All the days static:");
 		// Create the day variables and print them
 		Day monday = Day.MONDAY;
 		System.out.println(monday);
@@ -21,6 +22,14 @@ public class EnumApp {
 		
 		printLine();
 		
+		System.out.println("All the days in for loop:");
+		// Print all the days in the Day enum.
+		for(Day day: Day.values()) {
+			System.out.println(day);
+		}
+		
+		printLine();
+		
 		// Create a Coin array
 		Coin[] coins = new Coin[6];
 		// Add coins to the array
@@ -35,6 +44,7 @@ public class EnumApp {
 		
 		printLine();
 		
+		System.out.println("All the planets static:");
 		// Create the planet variables and print them.
 		Planet mercury = Planet.MERCURY;
 		System.out.println(mercury);
@@ -56,6 +66,13 @@ public class EnumApp {
 		System.out.println(neptune);
 		Planet pluto = Planet.PLUTO;
 		System.out.println(pluto);
+		
+		printLine();
+		
+		System.out.println("All the planets in for loop:");
+		for (Planet planet: Planet.values()) {
+			System.out.println(planet);
+		}
 		
 		printLine();
 	}
