@@ -1,54 +1,22 @@
 package be.my_portfolio.enumeration;
 
 public enum Coin {
-	ONE_CENT {
-		@Override
-		public int getValue() {
-			return 1;
-		}
-	},
-	TWO_CENT {
-		@Override
-		public int getValue() {
-			return 2;
-		}
-	},
-	FIVE_CENT {
-		@Override
-		public int getValue() {
-			return 5;
-		}
-	},
-	TEN_CENT {
-		@Override
-		public int getValue() {
-			return 10;
-		}
-	},
-	TWENTY_CENT {
-		@Override
-		public int getValue() {
-			return 20;
-		}
-	},
-	FIFTY_CENT {
-		@Override
-		public int getValue() {
-			return 50;
-		}
-	},
-	ONE_EURO {
-		@Override
-		public int getValue() {
-			return 100;
-		}
-	},
-	TWO_EURO {
-		@Override
-		public int getValue() {
-			return 200;
-		}
-	};
+	ONE_CENT(1),
+	TWO_CENT(2),
+	FIVE_CENT(5),
+	TEN_CENT(10),
+	TWENTY_CENT(20),
+	FIFTY_CENT(50),
+	ONE_EURO(100),
+	TWO_EURO(200);
 	
-	public abstract int getValue();
+	Coin(int value){
+		this.value = value;
+	}
+	
+	private int value;
+	
+	public int getValue() {
+		return this.value;
+	};
 }
