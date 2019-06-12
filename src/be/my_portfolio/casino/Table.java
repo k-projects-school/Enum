@@ -3,13 +3,15 @@ package be.my_portfolio.casino;
 import java.util.Arrays;
 
 public class Table {
-	public final static int MAX_PLAYERS_ON_TABLE = 5;
+	
+	private final static int MAX_PLAYERS_ON_TABLE = 5;
+	
 	private Card[][] playerCards;
 	private CasinoPlayer[] players = new CasinoPlayer[0];
 	private CardDealer dealer;
 	private Card[] dealerCards;
 
-	public Table(CasinoPlayer...players) {
+	public Table(CasinoPlayer... players) {
 		this.setPlayers(players);
 	}
 
@@ -75,7 +77,7 @@ public class Table {
 			this.players = Arrays.copyOf(this.players, this.players.length + 1);
 			this.players[position] = player;
 		} else {
-			System.out.println("Couldn't add" + player.getName() + ". Table is full!");
+			System.out.println("Couldn't add " + player.getName() + ". Table is full!");
 		}
 	}
 
