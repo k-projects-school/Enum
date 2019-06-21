@@ -10,7 +10,7 @@ public class CasinoPlayer {
 	CasinoPlayer(String name, double money) {
 		this.setName(name);
 		this.setMoney(money);
-		this.calculateChips();
+		//this.calculateChips();
 	}
 
 	/**

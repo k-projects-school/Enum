@@ -3,6 +3,10 @@ package be.my_portfolio.casino;
 public class CardDealer {
 	Deck deck = new Deck();
 	
+	public CardDealer() {
+		this.shuffleDeck();
+	}
+	
 	public void shuffleDeck() {
 		this.deck.shuffle();
 	}
@@ -16,7 +20,7 @@ public class CardDealer {
 	public Card[] dealCard(int amount) {
 		Card[] cards = new Card[amount];
 		for (int i = 0; i < amount; i++) {
-			cards[i] = this.deck.getCard(i);
+			cards[i] = this.deck.drawCard(i);
 		}
 		
 		return cards;

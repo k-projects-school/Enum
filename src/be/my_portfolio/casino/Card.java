@@ -36,4 +36,9 @@ public class Card {
 	public void setNumber(Value number) {
 		this.number = number;
 	}
+	
+	@Override
+	public String toString() {
+		return "Card [suit=" + suit + ", number=" + number + "]";
+	}
 }

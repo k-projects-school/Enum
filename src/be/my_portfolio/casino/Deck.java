@@ -20,6 +20,9 @@ public class Deck {
 				}
 			}
 		}
+		for(Card card: this.cards) {
+			System.out.println(card);
+		}
 	}
 
 	private void addCard(Card card) {
@@ -57,7 +60,7 @@ public class Deck {
 		}
 	}
 
-	public Card getCard(int position) {
+	public Card drawCard(int position) {
 		Card card = this.cards[position];
 		this.removeCardFromDeck(card);
 		return card;
@@ -65,9 +68,11 @@ public class Deck {
 
 	private void removeCardFromDeck(Card card) {
 		Card[] temp = Arrays.copyOf(this.cards, this.cards.length - 1);
+		int pos = 0;
 		for (int i = 0; i < this.cards.length; i++) {
-			if (this.cards[i] != card) {
-				temp[i] = card;
+			if (!this.cards[i].equals(card)) {
+				temp[pos] = this.cards[i];
+				pos++;
 			}
 		}
 		

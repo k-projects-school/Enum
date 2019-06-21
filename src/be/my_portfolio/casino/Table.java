@@ -7,8 +7,8 @@ public class Table {
 	private final static int MAX_PLAYERS_ON_TABLE = 5;
 	
 	private Card[][] playerCards;
-	private CasinoPlayer[] players = new CasinoPlayer[0];
-	private CardDealer dealer;
+	private CasinoPlayer[] players;
+	private CardDealer dealer = new CardDealer();
 	private Card[] dealerCards;
 
 	public Table(CasinoPlayer... players) {
@@ -67,7 +67,7 @@ public class Table {
 	/**
 	 * @param dealerCards the dealerCards to set
 	 */
-	public void setDealerCards(Card[] dealerCards) {
+	public void setDealerCards(Card... dealerCards) {
 		this.dealerCards = dealerCards;
 	}
 
@@ -82,6 +82,13 @@ public class Table {
 	}
 
 	public void startGame() {
-
+		this.setDealerCards(this.dealer.dealCard(2));
+		this.playerCards = new Card[this.players.length][2];
+		int i = 0;
+		for (CasinoPlayer player: this.players) {
+			this.playerCards[i] = this.dealer.dealCard(2);
+			System.out.println(player.getName() + "'s cards: " + Arrays.toString(this.playerCards[i]));
+			i++;
+		}
 	}
 }
